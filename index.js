@@ -10,99 +10,69 @@ const outputPath = path.join(output_dir, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const questions = [
-    {
-        type: "list",
-        name: "type",
-        message: "Please select your employment type. ",
-        choices: ["Manager", "Engineer", "Intern"]
-    },
-    {
-        type: "input",
-        name: "name",
-        message: "Enter your first and last name. "
-    },
-    {
-        type: "input",
-        name: "id",
-        message: "Enter your employee ID. "
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "Enter your email address. "
-    }
-];
+const Questions = require("./lib/questions");
+const managerQuestions = Questions.managerQuestions;
+const engineerQuestions = Questions.engineerQuestions;
+const internQuestions = Questions.internQuestions;
 
-const engineerQ = {
-    type: "input",
-    name: "github",
-    message: "Enter your GitHub username. "
-};
-
-const managerQ = {
-    type: "input",
-    name: "officeNum",
-    message: "Enter your office number. "
-};
-
-const internQ = {
-    type: "input",
-    name: "school",
-    message: "What school do you attend? "
-};
-
-const addAnother = {
-    type: "confirm",
-    name: "addAnother",
-    message: "Would you like to add another employee? "
-}
-
-let type, name, id, email, github, officeNum, school;
 let employeesArr = [];
+let addMember;
 
-function addEmployee() {
-    inquirer
-        .prompt(questions)
+init();
+
+function init() {
+    console.log("Please build your team.");
+    managerQuestions.askQuestions()
         .then(data => {
-            type = data.type;
-            name = data.name;
-            id = data.id;
-            email = data.email;
-            return type;
+            const {name, id, email, officeNum} = data;
+            addMember = data.addMember;
+            const manager = new Manager(name, id, email, officeNum);
+            employeesArr.push(manager);
+            addNewMember();
         })
-        .then(type => {
-            let followupQ;
-
-            if (type === "Engineer") {
-                followupQ = engineerQ;
-            } else if (type === "Intern") {
-                followupQ = internQ;
-            } else {
-                followupQ = managerQ;
-            };
-
-            return inquirer.prompt(followupQ);
-        })
-        .then(data => {
-            let value = Object.values(data)[0];
-            let employee;
-
-            if (type === "Engineer") {
-                github = value;
-                employee = new engineer(name, id, email, github);
-            } else if (type === "Intern") {
-                school = value;
-                employee = new intern(name, id, email, school);
-            } else {
-                officeNum = value;
-                employee = new manager(name, id, email, officeNum);
-            };
-
-            console.log(employee);
-
+        .catch(err => {
+            if (err) throw err;
         });
-
 };
 
-addEmployee();
+function addNewMember() {
+    if (addMember === "Engineer") {
+        addEngineer();
+    } else if (addMember === "Intern") {
+        addIntern();
+    } else {
+        const html = render(employeesArr);
+        fs.writeFile(outputPath, html, (err) => {
+            if (err) throw err;
+            console.log('Saved');
+        });
+    }
+};
+
+function addEngineer() {
+    engineerQuestions.askQuestions()
+        .then(data => {
+            const { name, id, email, github } = data;
+            addMember = data.addMember;
+            const engineer = new Engineer(name, id, email, github);
+            employeesArr.push(engineer);
+            addNewMember();
+        })
+        .catch(err => {
+            if (err) throw err;
+        });
+};
+
+function addIntern() {
+    internQuestions.askQuestions()
+        .then(data => {
+            const { name, id, email, school } = data;
+            addMember = data.addMember;
+            const intern = new Intern(name, id, email, school);
+            employeesArr.push(intern);
+            addNewMember();
+        })
+        .catch(err => {
+            if (err) throw err;
+        });
+};
