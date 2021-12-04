@@ -49,8 +49,12 @@ npm run test
 * [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
 ## Finished Product
-[!image](\assets\images\exampleteamprofile.jpg) <br>
-[![video](https://img.youtube.com/vi/VID/2D6pLlJZPZc.jpg)](https://www.youtube.com/watch?v=2D6pLlJZPZc)
+A video of the application in action: [YouTube](https://www.youtube.com/watch?v=2D6pLlJZPZc)
+<br>
+A photo of the generated team profile file:
+<br>
+![](assets/images/exampleteamprofile.jpg)
+
 
 ## Questions
 If you have any questions about the repo, please contact me:<br>
