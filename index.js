@@ -5,12 +5,12 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
-const output_dir = path.resolve(__dirname, "output");
-const outputPath = path.join(output_dir, "team.html");
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const Questions = require("./lib/questions");
+const Questions = require("./lib/Questions");
 const managerQuestions = Questions.managerQuestions;
 const engineerQuestions = Questions.engineerQuestions;
 const internQuestions = Questions.internQuestions;
