@@ -49,7 +49,7 @@ npm run test
 * [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
 ## Finished Product
-Sample HTML coming soon <br>
+[Photo of example team profile](https://github.com/mteubnerfoster/team-profile-generator/blob/main/assets/images/exampleteamprofile.jpg) <br>
 Video coming soon
 
 ## Questions
