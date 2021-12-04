@@ -53,5 +53,5 @@ Sample HTML coming soon
 Video coming soon
 
 ## Questions
-If you have any questions about the repo, please contact me:
-On GitHub: [mteubnerfoster](https://github.com/mteubnerfoster) | Email: mteubnerfoster@gmail.com
+If you have any questions about the repo, please contact me:<br>
+GitHub: [mteubnerfoster](https://github.com/mteubnerfoster) | Email: [mteubnerfoster@gmail.com](mailto:mteubnerfoster@gmail.com)
