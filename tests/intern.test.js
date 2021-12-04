@@ -1,4 +1,4 @@
-const intern = require("../lib/intern");
+const Intern = require("../lib/Intern");
 
 test("Can set school via constructor", () => {
   const testValue = "University of Washington";
@@ -7,7 +7,7 @@ test("Can set school via constructor", () => {
 });
 
 test("getRole() should return \"intern\"", () => {
-  const testValue = "intern";
+  const testValue = "Intern";
   const e = new intern("Serra", 1, "email@test.com", "University of Washington");
   expect(e.getRole()).toBe(testValue);
 });
