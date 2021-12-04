@@ -49,7 +49,7 @@ npm run test
 * [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
 ## Finished Product
-Sample HTML coming soon
+Sample HTML coming soon <br>
 Video coming soon
 
 ## Questions
