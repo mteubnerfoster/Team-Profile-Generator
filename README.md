@@ -49,8 +49,8 @@ npm run test
 * [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
 ## Finished Product
-[Photo of example team profile](https://github.com/mteubnerfoster/team-profile-generator/blob/main/assets/images/exampleteamprofile.jpg) <br>
-Video coming soon
+[!image](\assets\images\exampleteamprofile.jpg) <br>
+[![video](https://img.youtube.com/vi/VID/2D6pLlJZPZc.jpg)](https://www.youtube.com/watch?v=2D6pLlJZPZc)
 
 ## Questions
 If you have any questions about the repo, please contact me:<br>
