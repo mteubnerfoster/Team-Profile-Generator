@@ -16,7 +16,7 @@ Team Profile Generator is a command-line interface application that allows the u
 
 
 ## Usage
-* Run node app.js to begin.
+* Run node index.js to begin.
 * Answer prompted questions about team members.
 * Add one manager and multiple engineers and interns.
 * Select the "I'm done" when there are no more team members to add.
